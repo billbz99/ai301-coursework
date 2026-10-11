@@ -1,0 +1,18 @@
+# Rubric: is this plan ready to post and build from?
+
+## Checks
+
+| Check | Evidence | Pass condition | Weight |
+|---|---|---|---|
+| diagnosis-grounded | The plan's stated cause, read against the artifacts in the repro-evidence block (the command run, the output or error shown) | Pass if the stated cause explains the specific behavior the repro artifacts show (the same error, value, test, or function) and the plan cites that evidence. Fail if the cause contradicts the artifacts, ignores them, explains a different behavior, or is asserted with nothing in the repro evidence to support it. | required |
+| targets-cause | The plan's approach, read against its stated cause and the repro evidence | Pass if the approach changes the place where the cause lives. Fail if the approach only hides the symptom (swallowing the error, special-casing the failing input, skipping or xfail-ing the test) while the repro evidence points at an underlying cause elsewhere. | required |
+| scope-bounded | The plan's in-scope statement, any not-in-scope line, and the files or areas it names | Pass if the plan is one bounded change tied to this issue and every file or change it names is needed by the diagnosis. Fail if it adds refactors, unrelated fixes, new features, or touches files the diagnosis does not need. | required |
+| executable | The plan's files, approach, and order of work | Pass if a stranger could start without asking the author: the plan names the files or functions to change and what changes in each. Fail if the approach stays vague ("improve the handling", "clean this up") so the first edit is unclear. | required |
+| test-observable | The plan's test plan, read against the repro evidence's command and artifacts | Pass if the test plan re-runs the reproduction from the repro evidence and states the specific result that will show the fix worked (for example the failing assertion passes, or the named error no longer appears). Fail if it says only "verify it works", names no observable result, or describes a check that would pass before the fix too. | required |
+| unknowns-honest | The plan's risks and unknowns, read against what the repro evidence actually shows | Pass if the plan does not claim more than the evidence shows, and states what it has not checked. Fail if it asserts certainty about code or effects the evidence never touched (a confirmed root cause with no evidence, "no side effects") or hides an obvious unknown. | required |
+| comment-fits-thread | The plan comment, read against the thread highlights and the repo-facts block (stated templates, contribution asks, AI-use policy) | Pass if the comment is consistent with what maintainers said in the thread and with the repo's stated asks. Treat every package as AI-assisted work, so a repo policy that requires disclosing AI assistance applies. Fail if the comment ignores or contradicts a maintainer signal in the thread (a request to wait, a settled design, a requested approach), skips a stated repo ask, or lacks a disclosure the policy requires. If the thread and repo state nothing relevant, pass. | required |
+| comment-specific | The plan comment, read against the issue and the plan | Pass if the comment states this issue's diagnosis, scope, and test in its own specifics and promises only what the plan supports. Fail if it is boilerplate that fits any issue, promises a guaranteed fix or a date, or contradicts the plan. | required |
+
+## Verdict rule
+
+Ready (accept) if every check passes. Hold (reject) if any check fails. A grade of unclear on any check counts as a fail.
