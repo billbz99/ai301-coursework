@@ -188,7 +188,7 @@ Sekelenao assigned me the issue ("assigned you the issue. Good luck on it!"). I 
 
 **2026-11-10**
 
-My first graded submission read an older version of this file, so I resubmitted. I used the grader's feedback to patch my scout: added the 7-day minimum age and a single ranking rule to `search-strategy.md` (tested the query in my terminal first, then Claude Code applied the edit and I checked the diff), and logged each change in `scan-notes.md`. I also pasted the key build output into this file instead of leaving it only on my machine, and removed the template's instruction text.
+My first graded submission read an older version of this file, so I resubmitted. I used the grader's feedback to patch my scout: added the 7-day minimum age and a single ranking rule to `search-strategy.md` (tested the query in my terminal first, then Claude Code applied the edit and I checked the diff), and logged each change in `scan-notes.md`. I also pasted the key build output into this file instead of leaving it only on my machine, and removed the template's instruction text. Later that evening I installed the PR monitor and its `--state` check showed PR #351 as merged and approved: Sekelenao had approved it at 00:29 ET and merged it three minutes later. An earlier page fetch that my AI assistant ran showed the PR as open with no review, which was stale; the monitor reading GitHub directly was the correct source, so I now check PR state with `gh` or the monitor and not with a fetched web page.
 
 **Toolkit**
 
@@ -208,9 +208,9 @@ My first graded submission read an older version of this file, so I resubmitted.
 **Maintainer Feedback:**
 
 - 2026-11-09: none yet. Sekelenao assigned me the issue earlier the same day; PR #351 shows no review or comments yet.
-- 2026-11-10: none yet. I checked the PR at about 20:50 ET: still open, review requested from Sekelenao, no comments, no changes requested.
+- 2026-11-10, 00:29 ET: Sekelenao approved the PR with the comment "Hi @billbz99, perfect PR, thank you for contributing to Flinkboot!" and merged it at 00:32 ET (05:32 UTC), about two hours after I opened it at 22:38 ET the evening before. No changes were requested, so there was nothing to revise. I noticed the merge at 21:16 ET on 2026-11-10 when my PR monitor's state check printed MERGED and APPROVED, and I confirmed it with `gh pr view`.
 
-**Status:** Awaiting review
+**Status:** Merged (2026-11-10 05:32 UTC, by Sekelenao; the PR closes issue #333)
 
 **Toolkit**
 
@@ -233,7 +233,7 @@ The scout refused to grade my real issue until I installed the wild-scope file, 
 
 **What I'd Do Differently Next Time**
 
-I would start the scan and the claim earlier in the week so the maintainer has time to answer before the deadline, and I would add a minimum-age filter and one ranking rule to the scout before running it. I would also install the voice guard before posting my first claim so every upstream post is checked, create `CLAUDE.local.md` before asking Claude Code to edit, and install the ship-gate before opening a PR instead of replacing it with a manual check. The maintainer assigned me the issue within hours of my claim, so asking early cost nothing.
+I would start the scan and the claim earlier in the week so the maintainer has time to answer before the deadline, and I would add a minimum-age filter and one ranking rule to the scout before running it. I would also install the voice guard before posting my first claim so every upstream post is checked, create `CLAUDE.local.md` before asking Claude Code to edit, and install the ship-gate before opening a PR instead of replacing it with a manual check. The maintainer assigned me the issue within hours of my claim, so asking early cost nothing. A very small PR that followed the repo's template exactly, with before and after numbers and an honest AI disclosure, was approved and merged in about two hours, so I would keep that habit of putting the evidence in the PR description.
 
 ---
 
